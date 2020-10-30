@@ -8,6 +8,7 @@ getRepoName = function(){
         repoNameEl.textContent = repoName;
         getRepoIssues(repoName);
     }
+    
     else {
         document.location.replace("./index.html");
     }
@@ -25,6 +26,7 @@ fetch(apiUrl).then(function(response) {
         if (response.headers.get("Link")) {
           displayWarning(repo);
         }
+       
       });
     } else {
 // if not successful, redirect to homepage
@@ -74,4 +76,3 @@ var displayIssues = function(issues){
 
 };
 getRepoName();
-getRepoIssues();
